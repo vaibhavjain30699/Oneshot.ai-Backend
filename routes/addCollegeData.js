@@ -13,14 +13,16 @@ router.route('/').post((req,res) => {
         No_of_Students: req.body.Nstudents, 
         Courses: req.body.courses,
     });
-
-    collegeData.save().then(() => res.json("User added")).catch(err => res.status(400).json("Error", err));
+    collegeData.save().then(() => res.json("College added")).catch(err => res.status(400).json("Error", err));
 });
 
 router.route('/addFakeData').patch((req,res) => {
     const fakeData = [];
+    
     const cities = ["Ghaziabad", "Hyderabad", "Noida", "Ghaziabad", "Agra", "Gwalior", "Guwahati", "Noida", "Gwalior","Agra", "Noida", "Warangal", "Gwalior", "Durgapur", "Dhanbad", "Silchar"];
+    
     const states = ["Uttar Pradesh", "Telangana", "Uttar Pradesh", "Uttar Pradesh", "Uttar Pradesh", "Madhya Pradesh", "Assam", "Uttar Pradesh", "Madhya Pradesh", "Uttar Pradesh", "Uttar Pradesh", "Telangana", "Madhya Pradesh", "West Bengal", "Jharkhand", "Assam"]
+    
     const colleges = [
         "ABES Ghaziabad", "SP College Hyderabad", "Amity University Noida",
         "Makhanlal College Ghaziabad", "DD College Agra", "IIIT Gwalior", "IIT Guwahati",
@@ -28,12 +30,9 @@ router.route('/addFakeData').patch((req,res) => {
         "GNIT Noida", "ITI Warangal", "MITS Gwalior",
         "NIT Durgapur", "ISM Dhanbad", "NIT Silchar"
         ];
-    const names = ["Vaibhav Jain","Abhishek Garain","Ashish Kirti Singh", "Amit Kumar Burman", 
-    "Kalp Varshney", "Aryan Bhardwaj", "Vaibhav Krishan", "Abhishek Upmanyu", "Anubhav Singh Bassi", 
-    "Bhuvam Bam", "Ashish Chanchlani", "Sandeep Jain", "Ayush Mehra", "Vaibhav Pandey", 
-    "Yo Yo Honey Singh", "Apoorva Arora", "Barkha Singh", "Ahsaas Channa", "Revathi Pillai", 
-    "Naveen Polishetty"];
-    const courses = [["Computer Science", "Physics"],["Computer Science", "Electronics"],["Mechanical", "Electronics"]]
+
+        const courses = [["Computer Science", "Physics"],["Computer Science", "Electronics"],["Mechanical", "Electronics"]]
+    
     for(var i=0;i<100;i++)
     {
         fakeData.push({
@@ -47,6 +46,7 @@ router.route('/addFakeData').patch((req,res) => {
             Courses: courses[i%3],
         });
     }
+
     const collegeData = CollegeModel.insertMany(fakeData).then(function(){
         console.log("Data inserted");
         res.json("Fake Users Added");  
