@@ -2,7 +2,7 @@ const router = require('express').Router();
 let CollegeModel = require('../models/collegeModel');
 let studentModel = require('../models/studentModel');
 
-router.route('/byID').get(async (req,res) => {
+router.route('/byID').post(async (req,res) => {
     let CollegeID = req.body.id;
     let collegeDetails = {};
     await CollegeModel.find({}, async function(err, result) {
@@ -21,7 +21,7 @@ router.route('/byID').get(async (req,res) => {
     res.status(200).json(collegeDetails);
 });
 
-router.route('/students').get(async (req,res) => {
+router.route('/students').post(async (req,res) => {
     let CollegeID = req.body.id;
     let studentsOfCollege = [];
     await studentModel.find({}, async function(err, result) {
@@ -40,7 +40,7 @@ router.route('/students').get(async (req,res) => {
     res.status(200).json(studentsOfCollege);
 });
 
-router.route('/allColleges').get(async (req,res) => {
+router.route('/allColleges').post(async (req,res) => {
     let colleges = [];
     await CollegeModel.find({}, async function(err, result) {
         if(err)

@@ -24,6 +24,14 @@ connection.once('open', () => {
     console.log("Database connection established successfully");
 });
 
+// const newdb = "mongodb+srv://vaibhavmongo:vaibhavmongo@cluster0.oq6m6.mongodb.net/AssignmentDatabase"
+// mongoose.connect(newdb, { useNewUrlParser: true, useCreateIndex: true});
+// connection = mongoose.connection;
+// connection.once('open', () => {
+//     console.log("Database1 connection established successfully");
+//     connection.close();
+// });
+
 const port = process.env.PORT || 8080
 
 app.get('/', async (req, res)=> {

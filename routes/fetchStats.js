@@ -1,7 +1,7 @@
 const router = require('express').Router();
 let CollegeModel = require('../models/collegeModel');
 
-router.route('/States').get(async (req,res) => {
+router.route('/States').post(async (req,res) => {
     let collegeDetails = {};
     let collegeResult = [];
 
@@ -33,7 +33,7 @@ router.route('/States').get(async (req,res) => {
     });
 });
 
-router.route('/Courses').get(async (req,res) => {
+router.route('/Courses').post(async (req,res) => {
     let subjectDetails = {};
     let subjectResult = [];
 

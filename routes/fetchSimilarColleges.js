@@ -1,7 +1,7 @@
 const router = require('express').Router();
 let CollegeModel = require('../models/collegeModel');
 
-router.route('/').get(async (req,res) => {
+router.route('/').post(async (req,res) => {
     let CollegeID = req.body.id;
     let collegeDetails = {};
     await CollegeModel.find({}, async function(err, result) {
