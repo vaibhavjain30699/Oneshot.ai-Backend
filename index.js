@@ -13,6 +13,9 @@ app.use(cors());
 
 const addCollegeDataRouter = require('./routes/addCollegeData');
 const addStudentDataRouter = require('./routes/addStudentData');
+const fetchSimilarCollegesRouter = require('./routes/fetchSimilarColleges');
+const fetchCollegeDetailsRouter = require('./routes/fetchCollegeDetails');
+const fetchCourseStatsRouter = require('./routes/fetchCourseStats');
 
 const database_uri = "mongodb://127.0.0.1:27017/AssignmentDatabase";
 mongoose.connect(database_uri, { useNewUrlParser: true, useCreateIndex: true});
@@ -29,7 +32,9 @@ app.get('/', async (req, res)=> {
 
 app.use('/addCollegeData', addCollegeDataRouter);
 app.use('/addStudentData', addStudentDataRouter);
-
+app.use('/fetchSimilarColleges', fetchSimilarCollegesRouter);
+app.use('/fetchCollegeDetails', fetchCollegeDetailsRouter);
+app.use('/fetchCourseStats', fetchCourseStatsRouter);
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
