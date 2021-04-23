@@ -52,7 +52,6 @@ router.route('/Courses').post(async (req,res) => {
                     }
                 })
             })
-            // console.log(subjectDetails);
 
             for await (const [key, val] of Object.entries(subjectDetails)) {
                 subjectResult.push(
