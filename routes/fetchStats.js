@@ -18,7 +18,7 @@ router.route('/States').post(async (req,res) => {
                     collegeDetails[data.State]=[data];
                 }
             })
-            console.log(collegeDetails);
+            // console.log(collegeDetails);
 
             for await (const [key, val] of Object.entries(collegeDetails)) {
                 collegeResult.push(
@@ -52,7 +52,7 @@ router.route('/Courses').post(async (req,res) => {
                     }
                 })
             })
-            console.log(subjectDetails);
+            // console.log(subjectDetails);
 
             for await (const [key, val] of Object.entries(subjectDetails)) {
                 subjectResult.push(

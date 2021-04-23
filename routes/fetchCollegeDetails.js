@@ -17,7 +17,7 @@ router.route('/byID').post(async (req,res) => {
             })
         }
     });
-    console.log(collegeDetails);
+    // console.log(collegeDetails);
     res.status(200).json(collegeDetails);
 });
 
@@ -36,7 +36,7 @@ router.route('/students').post(async (req,res) => {
             })
         }
     });
-    console.log(studentsOfCollege);
+    // console.log(studentsOfCollege);
     res.status(200).json(studentsOfCollege);
 });
 
@@ -52,7 +52,7 @@ router.route('/allColleges').post(async (req,res) => {
             })
         }
     });
-    console.log(colleges);
+    // console.log(colleges);
     res.status(200).json(colleges);
 });
 

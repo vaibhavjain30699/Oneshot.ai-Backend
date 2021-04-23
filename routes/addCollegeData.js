@@ -47,7 +47,7 @@ router.route('/addFakeData').patch((req,res) => {
     //     });
     // }
     fs.readFile('./collegeData.json', 'utf8' , async (err, data) => {
-        console.log(data)
+        // console.log(data)
         const collegeData = CollegeModel.insertMany(JSON.parse(data)).then(function(){
             console.log("Data inserted");
             res.json("Fake Users Added");  

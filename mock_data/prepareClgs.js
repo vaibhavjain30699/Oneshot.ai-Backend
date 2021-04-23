@@ -23,6 +23,6 @@ fs.readFile('./aa.json', 'utf8' , async (err, data) => {
         });
         i++;
   });
-  console.log(clgs);
+  // console.log(clgs);
   fs.writeFileSync('collegeData.json', JSON.stringify(clgs))
 })

@@ -6,7 +6,7 @@ fs.readFile('../aa.txt', 'utf8' , async (err, data) => {
     return
   }
   let students = data.split(/\n/);
-  console.log(students)
+  // console.log(students)
 //   const result = new Array(Math.ceil(students.length / 100))
 //   .fill()
 //   .map(_ => students.splice(0, 100));

@@ -16,7 +16,7 @@ router.route('/').post(async (req,res) => {
             })
         }
     });
-    console.log(collegeDetails);
+    // console.log(collegeDetails);
     await CollegeModel.find({}, async function(err, result) {
         if(err)
         res.status(400).json(err);
