@@ -16,9 +16,8 @@ router.route('/byID').post(async (req,res) => {
                     collegeDetails = data;
             })
         }
-    });
-    // console.log(collegeDetails);
     res.status(200).json(collegeDetails);
+    });
 });
 
 router.route('/students').post(async (req,res) => {

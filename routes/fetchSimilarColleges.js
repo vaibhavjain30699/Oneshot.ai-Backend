@@ -23,12 +23,14 @@ router.route('/').post(async (req,res) => {
         else
         {
             let similarColleges = [];
-
+            // console.log(result)
             await result.forEach(data => {
+                console.log(data);
                 if(data.State === collegeDetails.State && Math.abs(data.No_of_Students-collegeDetails.No_of_Students)<=100 && (data["Courses"].filter(value => collegeDetails["Courses"].includes(value))).length)
-                similarColleges.push(data);
+                {similarColleges.push(data);console.log(data);}
             })
-            res.status(200).json(similarColleges);
+            // console.log(similarColleges)
+            await res.status(200).json(similarColleges);
         }
     });
 });
